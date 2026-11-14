@@ -11,6 +11,10 @@ function startRound() {
   losingChamber = Math.floor(Math.random() * 6);
   chamberNumber = 0;
   skippedThisRound = false;
+  const chambers = document.getElementById('chambers');
+  if (chambers) chambers.classList.remove('spinning');
+  const flag = document.getElementById('flag');
+  if (flag) flag.classList.remove('fired');
   updateUI();
 }
 
@@ -49,7 +53,11 @@ function reset() {
 
 function showFlag() {
   const flag = document.getElementById('flag');
-  if (flag) flag.classList.add('fired');
+  if (flag) {
+    const span = flag.querySelector('span');
+    if (span) span.textContent = 'YOU LOST';
+    flag.classList.add('fired');
+  }
 }
 
 function updateUI() {
@@ -57,6 +65,8 @@ function updateUI() {
   if (playerEl) playerEl.textContent = 'Player ' + currentPlayer;
   const replay = document.getElementById('replay');
   if (replay) replay.style.display = phase === 'lost' ? 'block' : 'none';
+  const chambers = document.getElementById('chambers');
+  if (chambers) chambers.classList.toggle('spinning', phase === 'spinning');
 }
 
 startRound();
