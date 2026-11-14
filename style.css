@@ -8,9 +8,9 @@ body { background: white; color: black; font-family: sans-serif; margin: 0; disp
 #trigger { background: red; color: white; font-size: 1.2em; padding: 12px 20px; border: none; cursor: pointer; }
 #skip { background: green; color: white; padding: 6px 12px; border: none; cursor: pointer; }
 #replay { background: blue; color: white; padding: 6px 12px; border: none; cursor: pointer; display: block; margin: 10px auto 0; }
-#flag { display: none; position: absolute; left: 82%; top: 35%; font-weight: bold; color: white; transform-origin: left center; }
-#flag .pole { position: absolute; left: -6px; top: 0; width: 6px; height: 100%; background: #8b4513; }
-#flag span { position: relative; display: block; background: red; padding: 4px 8px; margin-left: 6px; border-radius: 0; }
+#flag { display: none; position: absolute; left: 82%; top: 28%; font-weight: bold; color: white; transform-origin: left center; }
+#flag .pole { position: absolute; left: -80px; top: 0; width: 80px; height: 3px; background: #8b4513; }
+#flag span { position: relative; display: block; background: red; padding: 4px 8px; margin-left: 0; border-radius: 0; }
 #flag.fired { display: block; animation: flag-fire 1s ease-out forwards; }
 @keyframes chamber-spin {
   from { transform: rotateX(0deg); }
