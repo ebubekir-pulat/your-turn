@@ -59,7 +59,7 @@ function showFlag() {
   const flag = document.getElementById('flag');
   if (flag) {
     const span = flag.querySelector('span');
-    if (span) span.textContent = 'YOU LOST';
+    if (span) span.textContent = 'YOU LOSE';
     flag.classList.add('fired');
   }
 }
