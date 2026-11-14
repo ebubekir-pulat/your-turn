@@ -1,23 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160">
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="160" viewBox="0 0 460 160">
   <!-- barrel -->
-  <rect x="200" y="60" width="180" height="40" fill="black"/>
-  <!-- body -->
-  <rect x="40" y="40" width="160" height="80" fill="black"/>
+  <rect x="230" y="45" width="150" height="22" fill="black"/>
+  <!-- front sight -->
+  <rect x="370" y="38" width="6" height="7" fill="black"/>
+  <!-- cylinder -->
+  <rect x="150" y="38" width="80" height="50" fill="black"/>
   <!-- chambers -->
-  <g>
-    <rect x="60" y="55" width="20" height="20" fill="black"/>
-    <rect x="90" y="55" width="20" height="20" fill="white" stroke="black"/>
-    <rect x="120" y="55" width="20" height="20" fill="black"/>
-    <rect x="60" y="85" width="20" height="20" fill="white" stroke="black"/>
-    <rect x="90" y="85" width="20" height="20" fill="black"/>
-    <rect x="120" y="85" width="20" height="20" fill="white" stroke="black"/>
+  <rect x="158" y="46" width="10" height="10" fill="white"/>
+  <rect x="182" y="46" width="10" height="10" fill="white"/>
+  <rect x="206" y="46" width="10" height="10" fill="white"/>
+  <rect x="158" y="70" width="10" height="10" fill="white"/>
+  <rect x="182" y="70" width="10" height="10" fill="white"/>
+  <rect x="206" y="70" width="10" height="10" fill="white"/>
+  <!-- frame -->
+  <rect x="90" y="38" width="60" height="50" fill="black"/>
+  <!-- top strap -->
+  <rect x="90" y="30" width="140" height="8" fill="black"/>
+  <!-- hammer -->
+  <rect x="100" y="18" width="12" height="14" fill="black"/>
+  <!-- trigger guard -->
+  <rect x="105" y="88" width="45" height="8" fill="black"/>
+  <rect x="105" y="88" width="8" height="22" fill="black"/>
+  <rect x="142" y="88" width="8" height="22" fill="black"/>
+  <!-- trigger -->
+  <rect x="122" y="88" width="6" height="14" fill="black"/>
+  <!-- grip -->
+  <rect x="60" y="88" width="40" height="55" fill="black"/>
+  <rect x="50" y="95" width="15" height="40" fill="black"/>
+  <!-- flag at muzzle, vertically centered on barrel -->
+  <g transform="translate(378,43)">
+    <rect x="0" y="0" width="5" height="26" fill="black"/>
+    <rect x="5" y="0" width="42" height="16" fill="red"/>
+    <text x="26" y="12" text-anchor="middle" font-size="7" font-weight="bold" fill="white">YOU LOSE!</text>
   </g>
-  <!-- losing chamber flag -->
-  <g transform="translate(150,40)">
-    <rect x="0" y="0" width="6" height="40" fill="black"/>
-    <rect x="6" y="0" width="60" height="20" fill="red"/>
-    <text x="36" y="14" text-anchor="middle" font-size="8" fill="white">YOU LOSE!</text>
-  </g>
-  <!-- handle -->
-  <rect x="60" y="120" width="40" height="30" fill="black"/>
 </svg>
