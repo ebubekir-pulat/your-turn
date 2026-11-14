@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160">
+  <!-- barrel -->
+  <rect x="200" y="60" width="180" height="40" fill="black"/>
+  <!-- body -->
+  <rect x="40" y="40" width="160" height="80" fill="black"/>
+  <!-- chambers -->
+  <g>
+    <rect x="60" y="55" width="20" height="20" fill="black"/>
+    <rect x="90" y="55" width="20" height="20" fill="white" stroke="black"/>
+    <rect x="120" y="55" width="20" height="20" fill="black"/>
+    <rect x="60" y="85" width="20" height="20" fill="white" stroke="black"/>
+    <rect x="90" y="85" width="20" height="20" fill="black"/>
+    <rect x="120" y="85" width="20" height="20" fill="white" stroke="black"/>
+  </g>
+  <!-- losing chamber flag -->
+  <g transform="translate(150,40)">
+    <rect x="0" y="0" width="6" height="40" fill="black"/>
+    <rect x="6" y="0" width="60" height="20" fill="red"/>
+    <text x="36" y="14" text-anchor="middle" font-size="8" fill="white">YOU LOSE!</text>
+  </g>
+  <!-- handle -->
+  <rect x="60" y="120" width="40" height="30" fill="black"/>
+</svg>
