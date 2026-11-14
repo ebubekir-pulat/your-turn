@@ -10,7 +10,7 @@ Covers layout, colors, revolver artwork, buttons, and player indicator.
 
 ## Requirements
 
-1. **Background**: charcoal black `#171717`.
+1. **Background**: white.
 2. **Revolver**: cartoon style, centered, pointing right. Hand-drawn and saved as an SVG file, referenced from the page. Six visible chambers with alternating black and white squares; the losing chamber carries the red flag with white `YOU LOSE!` text.
 3. **Buttons**:
    - Large red button labelled `PULL THE TRIGGER`.

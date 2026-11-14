@@ -17,9 +17,9 @@ Plain JavaScript state machine plus DOM hooks. No frameworks, no external librar
 1. **State**
 
    - `phase`: `idle` | `spinning` | `lost`
-   - `currentPlayer`: starts at `1`
+   - `currentPlayer`: starts at `1`, and is either `0` or `1` (2 Player Game)
    - `losingChamber`: random int `0`–`5`, picked at round start
-   - `outcome`: random int `0`–`5`, only set while resolving
+   - `currentChamber`: number, current chamber number, which is initialised to 0, and increments by 1 after each fire.
    - `skippedThisRound`: boolean, to enforce the once-per-round skip rule
 
 2. **Round start** — run on game start and whenever a new round begins:
@@ -27,38 +27,39 @@ Plain JavaScript state machine plus DOM hooks. No frameworks, no external librar
    - `phase = idle`
    - `currentPlayer = 1`
    - `losingChamber = random 0–5`
+   - `currentChamber = 0`
    - `skippedThisRound = false`
 
 3. **Fire**
 
    - Only allowed in the `idle` phase.
    - Set `phase = spinning`.
-   - After ~1000 ms: pick `outcome = random 0–5` and resolve.
+   - After ~1000 ms: Go to Resolve.
 
 4. **Resolve**
 
-   - If `outcome === losingChamber` → set `phase = lost` (flag fires, see spec 03).
-   - Otherwise → hand the turn to the next player.
+   - If `chamberNumber === losingChamber` → set `phase = lost` (flag fires, see spec 03).
+   - Otherwise → hand the turn to the next player and `chamberNumber` increments by 1.
 
 5. **Skip**
 
    - Only allowed in the `idle` phase.
    - Only once per round (guard with `skippedThisRound`).
-   - Hand the turn to the next player, same wrap-around as a safe fire.
+   - Hand the turn to the next player, `chamberNumber` stays the same.
 
 6. **Turn hand-off / new round**
 
    - Advance `currentPlayer`, wrapping from `2` back to `1`.
-   - After the last player, start a new round.
+   - After flag fires, or all chambers have been fired, show pop-up saying 'Press Reset to Play Again'.
 
 7. **Reset / replay**
 
-   - Replay button → reset the current round (step 2).
+   - Replay button → reset the current round.
 
 ## Acceptance Criteria Mapping
 
-- [ ] Each fire has exactly a 1-in-6 chance of losing (random `0`–`5` vs `losingChamber`).
-- [ ] A safe fire passes the turn to the next player.
+- [ ] Each chamber has exactly a 1-in-6 chance of being the `losingChamber` (random `0`–`5`).
+- [ ] A safe fire or skip passes the turn to the next player.
 - [ ] A player can skip at most once per round.
 - [ ] Losing shows the flag result and offers a replay button.
 

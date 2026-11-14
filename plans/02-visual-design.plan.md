@@ -12,17 +12,17 @@ Make the game look like a playful retro arcade toy.
 
 1. **`index.html`**
 
-   - Layout: dark background, revolver centered, buttons below it.
+   - Layout: white background, revolver centered (draw with black squares), buttons below it.
    - Revolver: SVG file referenced from the page (e.g. `revolver.svg`), centered, pointing right.
 
 2. **`style.css`**
 
-   - Background: charcoal black `#171717`.
+   - Background: white.
    - Center the revolver horizontally and vertically.
    - `#trigger`: large red button, label `PULL THE TRIGGER`.
-   - `#skip`: small blue button, label `SKIP`.
-   - `#replay`: small reset/replay button, label `REPLAY`.
-   - Player indicator: visible in a top corner of the UI, e.g. `PLAYER 1`.
+   - `#skip`: small green button, label `SKIP`.
+   - `#replay`: small blue reset/replay button, label `REPLAY`.
+   - Player indicator: visible in the top right corner of the UI, e.g. `PLAYER 1`.
 
 3. **`revolver.svg`**
 
@@ -35,7 +35,7 @@ Make the game look like a playful retro arcade toy.
 - [ ] Revolver renders from SVG, centered and pointing right.
 - [ ] Chamber alternation between black and white is visible; losing chamber shows the red flag.
 - [ ] All three buttons exist with the correct labels and colors.
-- [ ] Player number is visible in a top corner.
+- [ ] Player number is visible in top right corner.
 
 ## Out of Scope
 
