@@ -2,15 +2,17 @@
 let phase = 'idle';
 let currentPlayer = 1;
 let losingChamber = 0;
-let currentChamber = 0;
-let skippedThisRound = false;
+let chamberNumber = 0;
+let player1Skipped = false;
+let player2Skipped = false;
 
 function startRound() {
   phase = 'idle';
   currentPlayer = 1;
   losingChamber = Math.floor(Math.random() * 6);
   chamberNumber = 0;
-  skippedThisRound = false;
+  player1Skipped = false;
+  player2Skipped = false;
   const chambers = document.getElementById('chambers');
   if (chambers) chambers.classList.remove('spinning');
   const flag = document.getElementById('flag');
@@ -41,8 +43,10 @@ function fire() {
 
 function skip() {
   if (phase !== 'idle') return;
-  if (skippedThisRound) return;
-  skippedThisRound = true;
+  if (currentPlayer === 1 && player1Skipped) return;
+  if (currentPlayer === 2 && player2Skipped) return;
+  if (currentPlayer === 1) player1Skipped = true;
+  else player2Skipped = true;
   nextPlayer();
   updateUI();
 }
